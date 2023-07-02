@@ -1,5 +1,4 @@
-
-    class Solution {
+   class Solution {
         public void setZeroes(int[][] matrix) {
 
             //COL0 is true becoz agar us column me koi 0 aya to full column zero krdenge
