@@ -1,0 +1,45 @@
+class Solution {
+    public int maxPoints(int[][] points) {
+    //line consists of 2 points least
+    if(points.length<3){
+        return points.length;
+    }
+    //sbse pehle ek hashmap bnalo
+ 
+    int known_pts=0; // 2 points mil chuke alrdy asa hm manke chlnge so that unke slope
+                    // ko use krke hm baaki k pts find krske
+    //ab hm alt 2 arrays lenge 
+    // VISUALISE PTS:
+    //  [[1,1],[2,2],[3,3]]
+    //  1 1
+    //  2 2
+    //  3 3
+   // In the first iteration (i = 0), x will be assigned [1, 1].
+    //In the second iteration (i = 1), x will be assigned [2, 2].
+    //In the third iteration (i = 2), x will be assigned [3, 3].
+
+       for(int []x :points){
+            Map<Double,Integer> map = new HashMap<>();
+            for(int []y :points){
+                if(x==y){
+                    continue;
+                }
+            
+        double slope;
+        if(x[0]==y[0]){
+            slope=Double.POSITIVE_INFINITY;
+        }
+        else{
+            slope=(y[1]-x[1])/(double)(y[0]-x[0]);
+        }
+        map.put(slope,map.getOrDefault(slope,0)+1);
+        known_pts=Math.max(known_pts,map.get(slope));
+        
+                
+                } 
+            
+        }
+    return known_pts+1;
+    } 
+    
+}
