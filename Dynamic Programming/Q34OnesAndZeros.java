@@ -1,4 +1,4 @@
-// On//0-1 KNAPSACK PROBLEM
+// 0-1 KNAPSACK PROBLEM
 
 class Solution {
     public int findMaxForm(String[] S, int M, int N) {
